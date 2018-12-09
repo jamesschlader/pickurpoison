@@ -94,7 +94,7 @@ class App extends Component {
     console.log(key);
     console.log(`here's the array inside shuffleDeck: `, array);
     console.log(`here's the this.state.list inside shuffleDeck: `, this.state.panels);
-    console.log(`here's the this.state.list inside shuffleDeck: `, this.state.panels[key]);
+    console.log(`here's the clicked item inside shuffleDeck: `, this.state.panels[key]);
    
     const clicked = array.find(item => item.id === key);
     if (!clicked.clicked) {
@@ -102,6 +102,7 @@ class App extends Component {
    
       this.setState({
           total: this.state.total + 1,
+          highScore: this.state.total > this.state.highScore ? this.state.total : this.state.highScore
       });
      
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -119,7 +120,7 @@ class App extends Component {
        array[randomIndex] = temporaryValue;
       }
       this.setState({
-          list: array
+          panels: array
         })
     } else {
       this.setState({
@@ -128,17 +129,23 @@ class App extends Component {
     }
    }
 
-   handleGameOver (object) {
+   handleGameOver = (object) => {
    
     console.log(`this is `, this)
     console.log(`this.state.panel is `, object)
-    const setPanels = object.panels.map(item => item.clicked = false)
+    const setPanels = [];
+    object.panels.forEach(item => {
+      item.clicked = false;
+      setPanels.push(item)
+    });
+    console.log(`here are the setPanels: `, setPanels)
     this.setState({
       highScore: object.total > object.highScore ? object.total : object.highScore,
       total: 0,
       gameOver: false,
       panels: setPanels
     })
+    console.log(`after update, here's the state `,this.state)
    }
 
   render() {
@@ -155,6 +162,7 @@ class App extends Component {
        </div>
 
        <Card operator={this.state.total}>{this.state.highScore}</Card>
+
    {!this.state.gameOver ? <HalfGrid>{newList}</HalfGrid> : <React.Fragment>{gameOverModal}</React.Fragment>
      
    }
