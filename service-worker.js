@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/pickurpoison/precache-manifest.5f16a352c25b521c25d78a061e5c9c01.js"
+  "/pickurpoison/precache-manifest.280b8e4357a889becfc9eefce92e2296.js"
 );
 
 workbox.clientsClaim();

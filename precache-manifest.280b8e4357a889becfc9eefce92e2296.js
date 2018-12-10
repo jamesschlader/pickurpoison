@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "6e14b4af3e8fe3c86cbe",
-    "url": "/pickurpoison/static/js/main.6e14b4af.chunk.js"
+    "revision": "000c4a45062affd045f7",
+    "url": "/pickurpoison/static/js/main.000c4a45.chunk.js"
   },
   {
     "revision": "6c11b8ae9efacecd91af",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/pickurpoison/static/js/runtime~main.3b746cbe.js"
   },
   {
-    "revision": "670dee506c5e4db8c05ad0635cc9a008",
+    "revision": "b58e65c4702b94638e9e3a38d57444af",
     "url": "/pickurpoison/index.html"
   }
 ];
